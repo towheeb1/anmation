@@ -1,25 +1,72 @@
-:root {
-  font-family: 'Cairo', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f7f8;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #12A29A;
+  --color-secondary: #2A3A8E;
+  --color-text-primary: #333333;
+  --color-text-secondary: #6B6E71;
+  --color-bg-light: #f9fbfb;
+  
+  --font-tajawal: "Tajawal", sans-serif;
+  
+  --spacing-section: 80px;
+  
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@layer base {
+  body {
+    @apply font-tajawal text-text-primary bg-bg-light antialiased;
+    direction: rtl;
+    text-align: right;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-text-primary;
+  }
+
+  p {
+    @apply text-text-secondary leading-relaxed;
+  }
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: #f4f7f8;
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2 rounded-md font-medium transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+
+  .btn-secondary {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* GSAP initial states to prevent flash of unstyled content (FOUC) */
+  .gsap-reveal {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
-a {
-  text-decoration: none;
+@media (prefers-reduced-motion: reduce) {
+  .gsap-reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
 }

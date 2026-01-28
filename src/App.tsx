@@ -1,30 +1,38 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import AboutSnad from './pages/AboutSnad'
-import InitiativesProjects from './pages/InitiativesProjects'
-import CharitableContributions from './pages/CharitableContributions'
-import News from './pages/News'
-import Faq from './pages/Faq'
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Home from './pages/Home';
+import InitiativesProjects from './pages/InitiativesProjects';
+import News from './pages/News';
+import Faq from './pages/Faq';
+import AboutSnad from './pages/AboutSnad';
 
 function App() {
-  return (
-    <div className="snad-app">
-      <Navbar />
+  const { pathname } = useLocation();
 
-      <main className="snad-content">
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      
+      <div className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutSnad />} />
           <Route path="/initiatives" element={<InitiativesProjects />} />
-          <Route path="/charity" element={<CharitableContributions />} />
           <Route path="/news" element={<News />} />
           <Route path="/faq" element={<Faq />} />
         </Routes>
-      </main>
+      </div>
+
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
