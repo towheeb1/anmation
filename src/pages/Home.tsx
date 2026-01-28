@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/ui/Hero';
 import InitiativesSlider from '../components/ui/InitiativesSlider';
 import StatsShowcaseSection from '../components/ui/StatsShowcaseSection';
+import NewsSection from '../components/ui/NewsSection';
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
 
       {/* Initiatives Slider Section */}
       <InitiativesSlider />
+
+      {/* News Section */}
+      <NewsSection />
 
       {/* Call to Action Section */}
       <section className="py-20 bg-primary/5">

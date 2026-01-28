@@ -26,7 +26,7 @@ const StatsShowcase: React.FC = () => {
         value: "13",
         label: "منطقة مستفيدة من مشروع الأمير محمد بن سلمان لتطوير المساجد التاريخية",
         image:
-          "https://images.unsplash.com/photo-1586724237569-f3d021dd4c37?auto=format&fit=crop&q=80&w=1200",
+          "https://thumbs.dreamstime.com/b/faceless-hooded-anonymous-computer-hacker-programming-code-monitor-46142616.jpg?w=768",
         variant: "imgTopWhiteBottom",
       },
       // 2) مثل (+26): أعلى أبيض + صورة أسفل
@@ -35,7 +35,7 @@ const StatsShowcase: React.FC = () => {
         value: "+26",
         label: "ألف أسرة مستفيدة من مبادرة سند الزواج",
         image:
-          "https://images.unsplash.com/photo-1520975958225-18aee1a21591?auto=format&fit=crop&q=80&w=1200",
+          "https://thumbs.dreamstime.com/b/programming-code-screen-software-developer-computer-abstract-development-93689313.jpg?w=768",
         variant: "whiteTopImgBottom",
       },
       // 3) مثل (+200): صورة فوق + أسفل أبيض
@@ -44,7 +44,7 @@ const StatsShowcase: React.FC = () => {
         value: "+200",
         label: "ألف مستفيد من مشروع محمد بن سلمان الخيري",
         image:
-          "https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&q=80&w=1200",
+          "https://thumbs.dreamstime.com/b/programming-code-screen-software-developer-computer-abstract-development-93689313.jpg?w=768",
         variant: "imgTopWhiteBottom",
       },
       // 4) مثل (+100): صورة كاملة + لوح شفاف في الوسط للنص
@@ -53,7 +53,7 @@ const StatsShowcase: React.FC = () => {
         value: "+100",
         label: "جمعية أهلية تلقت الدعم من مشروع محمد بن سلمان الخيري",
         image:
-          "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=1200",
+          "https://thumbs.dreamstime.com/b/modern-computer-programming-code-screen-showing-random-scripts-113805394.jpg?w=768",
         variant: "whiteTopImgBottom",
       },
       // 5) مثل (+520): صورة فوق + أسفل أبيض
@@ -62,7 +62,7 @@ const StatsShowcase: React.FC = () => {
         value: "+520",
         label: "مليون ريال إجمالي عطاء مبادرة سند الزواج",
         image:
-          "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1200",
+          "https://thumbs.dreamstime.com/b/computer-programming-using-laptop-internet-technologies-49641566.jpg?w=768",
         variant: "imgTopWhiteBottom",
       },
     ],

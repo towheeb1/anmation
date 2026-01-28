@@ -20,8 +20,8 @@ const initiativesData: Initiative[] = [
     description: 'مبادرة تقدم الرعاية الشاملة لفئة مبتوري الأطراف وفق احتياجهم الجسدي والنفسي بهدف رفع مستوى جودة حياتهم وانسجامهم مع المجتمع.',
     ctaText: 'تعرف على المبادرة',
     ctaLink: '#',
-    imageTall: 'https://images.unsplash.com/photo-1581056399312-6038ec4c6c95?auto=format&fit=crop&q=80&w=800',
-    imageSmall: 'https://images.unsplash.com/photo-1576091160550-2173bdd99625?auto=format&fit=crop&q=80&w=600'
+    imageTall: 'https://thumbs.dreamstime.com/b/faceless-hooded-anonymous-computer-hacker-programming-code-monitor-46142616.jpg?w=768',
+    imageSmall: 'https://thumbs.dreamstime.com/b/programming-code-screen-software-developer-computer-abstract-development-93689313.jpg?w=768'
   },
   {
     id: 2,
@@ -29,8 +29,8 @@ const initiativesData: Initiative[] = [
     description: 'مبادرة تهدف إلى مساندة حديثي الزواج وتحقيق الاستقرار الأسري والاجتماعي من خلال تقديم الدعم المادي والمعرفي.',
     ctaText: 'تعرف على المبادرة',
     ctaLink: '#',
-    imageTall: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
-    imageSmall: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=600'
+    imageTall: 'https://thumbs.dreamstime.com/b/computer-programming-using-laptop-internet-technologies-49641566.jpg?w=768',
+    imageSmall: 'https://thumbs.dreamstime.com/b/modern-computer-programming-code-screen-showing-random-scripts-113805394.jpg?w=768'
   },
   {
     id: 3,
@@ -38,8 +38,8 @@ const initiativesData: Initiative[] = [
     description: 'تمكين الأيتام وتعزيز قدراتهم العلمية والعملية لبناء مستقبل مشرق يساهم في رقي المجتمع.',
     ctaText: 'تعرف على المبادرة',
     ctaLink: '#',
-    imageTall: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800',
-    imageSmall: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600'
+    imageTall: 'https://thumbs.dreamstime.com/b/web-development-coding-programming-internet-technology-business-concept-web-development-coding-programming-internet-technology-121903546.jpg?w=992',
+    imageSmall: 'https://thumbs.dreamstime.com/b/faceless-hooded-anonymous-computer-hacker-programming-code-monitor-49753774.jpg?w=768'
   }
 ];
 
