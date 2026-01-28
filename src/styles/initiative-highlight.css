@@ -1,0 +1,129 @@
+:root {
+  --initiative-bg: linear-gradient(180deg, #e8f7f7 0%, #ffffff 65%);
+  --initiative-card-bg: #ffffff;
+  --initiative-card-border: #ced7dd;
+  --initiative-shadow: 0 24px 50px rgba(17, 40, 63, 0.15);
+}
+
+.initiative-highlight {
+  margin-top: 3rem;
+  border-radius: 1.5rem;
+  background: var(--initiative-bg);
+  padding: 2rem 1.5rem 3rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.initiative-highlight__header {
+  text-align: center;
+  color: #0f2531;
+}
+
+.initiative-highlight__header p {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #5f6f7a;
+}
+
+.initiative-highlight__header h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 1.3;
+}
+
+.initiative-highlight__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.initiative-highlight__media img {
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 60px rgba(14, 33, 56, 0.25);
+}
+
+.initiative-highlight__card {
+  background: var(--initiative-card-bg);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--initiative-shadow);
+  border: 1px solid var(--initiative-card-border);
+  display: grid;
+  gap: 1rem;
+}
+
+.initiative-highlight__nav {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #b3c0cb;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  justify-self: flex-start;
+}
+
+.initiative-highlight__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.initiative-highlight__tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.2rem 0.9rem;
+  border-radius: 999px;
+  background: #eef3f6;
+  color: #4c6880;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.initiative-highlight__meta h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #121a2c;
+}
+
+.initiative-highlight__text {
+  margin: 0;
+  color: #4d5f6b;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+@media (min-width: 900px) {
+  .initiative-highlight {
+    padding: 3rem 3rem 4rem;
+  }
+
+  .initiative-highlight__content {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .initiative-highlight__media {
+    flex: 1;
+  }
+
+  .initiative-highlight__card {
+    flex: 0.9;
+    margin-top: -4rem;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 2.5rem;
+  }
+
+  .initiative-highlight__nav {
+    border-radius: 0.75rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.3rem;
+  }
+}
+
