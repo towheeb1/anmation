@@ -1,37 +1,96 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #12A29A;
-  --color-secondary: #2A3A8E;
-  --color-text-primary: #333333;
-  --color-text-secondary: #6B6E71;
-  --color-bg-light: #f9fbfb;
+  /* Drink Collider Color Scheme */
+  --color-cream: #FFF8F0;
+  --color-black: #010101;
+  --color-pure-black: #000000;
+  --color-white: #FFFFFF;
+  --color-tan: #D4A574;
+  --color-tan-light: rgba(212, 165, 116, 0.3);
+  --color-navy: #1a2744;
   
-  --font-tajawal: "Tajawal", sans-serif;
+  /* Typography */
+  --font-primary: "Inter", "Neue Montreal", system-ui, sans-serif;
+  --font-display: "Ballmain", "Neue Montreal", system-ui, sans-serif;
   
+  /* Spacing */
   --spacing-section: 80px;
+  --spacing-section-lg: 120px;
   
+  /* Animation Timings */
+  --transition-fast: 0.15s ease-in;
+  --transition-base: 0.25s ease-out;
+  --transition-slow: 0.35s ease-out;
+  --transition-image: 0.7s ease-out;
+  
+  /* Custom Animations */
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 50s linear infinite;
 
   @keyframes fade-in-up {
-    0% { opacity: 0; transform: translateY(20px); }
+    0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
   }
 }
 
+/* Import Ballmain Font */
+@font-face {
+  font-family: 'Ballmain';
+  src: url('./assets/fonts/Ballmain.ttf') format('truetype'),
+       url('./assets/fonts/Ballmain.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
-    @apply font-tajawal text-text-primary bg-bg-light antialiased;
-    direction: rtl;
-    text-align: right;
+    @apply font-primary text-black bg-cream antialiased;
+    font-weight: 500;
+    line-height: 1.5;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-text-primary;
+    @apply font-medium text-black;
+    line-height: 1.2;
   }
 
   p {
-    @apply text-text-secondary leading-relaxed;
+    @apply text-black/80 leading-relaxed;
+  }
+  
+  a {
+    @apply transition-all duration-[var(--transition-base)];
   }
 }
 
@@ -39,21 +98,110 @@
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-2 rounded-md font-medium transition-all duration-300 cursor-pointer;
+  
+  .container-wide {
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Primary Button - Black with white text */
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-pure-black text-white font-medium text-sm tracking-wide;
+    transition: all var(--transition-base);
+  }
+  
+  .btn-primary:hover {
+    @apply bg-black/80;
+    transform: translateY(-2px);
   }
 
+  /* Secondary Button - Outlined */
   .btn-secondary {
-    @apply border border-primary text-primary hover:bg-primary hover:text-white;
+    @apply inline-flex items-center justify-center px-6 py-3 border border-black text-black font-medium text-sm tracking-wide bg-transparent;
+    transition: all var(--transition-base);
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-black text-white;
+  }
+  
+  /* Button with Arrow */
+  .btn-arrow {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-pure-black text-white font-medium text-sm tracking-wide relative overflow-hidden;
+    transition: all var(--transition-base);
+  }
+  
+  .btn-arrow::after {
+    content: '→';
+    @apply ml-1;
+    transition: transform var(--transition-slow);
+  }
+  
+  .btn-arrow:hover::after {
+    transform: translateX(4px);
+  }
+  
+  .btn-arrow:hover {
+    @apply bg-black/80;
   }
 
   .section-padding {
     @apply py-16 md:py-24;
+  }
+  
+  .section-padding-lg {
+    @apply py-20 md:py-32;
+  }
+  
+  /* Marquee Animation */
+  .marquee {
+    @apply flex whitespace-nowrap;
+    animation: marquee 50s linear infinite;
+  }
+  
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    transition: all var(--transition-base);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Image hover zoom */
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .img-zoom img {
+    transition: transform var(--transition-image);
+  }
+  
+  .img-zoom:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Fade in animation classes */
+  .fade-in {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .fade-in-delay-1 {
+    animation: fade-in-up 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+  
+  .fade-in-delay-2 {
+    animation: fade-in-up 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .fade-in-delay-3 {
+    animation: fade-in-up 0.8s ease-out 0.3s forwards;
+    opacity: 0;
   }
 
   /* GSAP initial states to prevent flash of unstyled content (FOUC) */
@@ -61,12 +209,53 @@
     opacity: 0;
     visibility: hidden;
   }
+  
+  /* Star rating */
+  .star-rating {
+    @apply flex items-center gap-1;
+  }
+  
+  .star {
+    @apply text-yellow-500;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium;  }
+  
+  .badge-dark {
+    @apply bg-pure-black text-white;
+  }
+  
+  .badge-light {
+    @apply bg-white text-black border border-black/10;
+  }
+  
+  /* Accordion styles */
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out;
+  }
+  
+  .accordion-content.open {
+    max-height: 500px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gsap-reveal {
+  .gsap-reveal,
+  .fade-in,
+  .fade-in-delay-1,
+  .fade-in-delay-2,
+  .fade-in-delay-3 {
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
+    animation: none !important;
+  }
+  
+  .marquee {
+    animation: none !important;
   }
 }
