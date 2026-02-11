@@ -7,10 +7,6 @@ import {
   BsChevronRight, 
   BsStarFill, 
   BsCheckCircleFill,
-  BsShield,
-  BsCpu,
-  BsBuilding,
-  BsFire,
   BsArrowRight
 } from 'react-icons/bs';
 
@@ -179,7 +175,7 @@ export default function AigorizmFeatures() {
       );
 
       // Features animations - Professional scale + fade
-      featuresRef.current.forEach((feature, index) => {
+      featuresRef.current.forEach((feature) => {
         if (!feature) return;
         
         gsap.fromTo(feature,

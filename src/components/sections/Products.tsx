@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FiStar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiStar } from 'react-icons/fi';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +18,7 @@ interface Product {
 
 const Products = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -92,13 +92,7 @@ const Products = () => {
     },
   ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % products.length);
-  };
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
-  };
 
   return (
     <section
@@ -118,28 +112,12 @@ const Products = () => {
             </p>
           </div>
 
-          {/* Navigation Arrows */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={prevSlide}
-              className="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-[var(--transition-base)]"
-              aria-label="Previous product"
-            >
-              <FiChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-[var(--transition-base)]"
-              aria-label="Next product"
-            >
-              <FiChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+
         </div>
 
         {/* Products Grid */}
         <div className="products-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div
               key={product.id}
               className="product-card group bg-white border border-black/10 overflow-hidden card-hover"

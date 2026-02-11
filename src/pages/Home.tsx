@@ -5,7 +5,6 @@ import Features from '../components/sections/Features';
 import Testimonials from '../components/sections/Testimonials';
 import FAQ from '../components/sections/FAQ';
 import HerrSection from '../components/sections/HeroSection';
-import HeroSection from '../components/sections/HeroSection';
 import AigorizmFeatures from '../components/sections/AigorizmFeatures';
 
 const Home = () => {

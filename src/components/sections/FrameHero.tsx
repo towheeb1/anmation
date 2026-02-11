@@ -36,7 +36,7 @@ const FrameHero = () => {
     },
   ];
 
-  const [activeSlide, setActiveSlide] = useState(0);
+  // const [activeSlide, setActiveSlide] = useState(0);
   const [slideOpacities, setSlideOpacities] = useState<number[]>([1, 0, 0]);
 
   // Generate frame filename
@@ -182,11 +182,11 @@ const FrameHero = () => {
       setSlideOpacities(newOpacities);
 
       // Update active slide
-      const newActiveSlide = Math.min(
-        Math.floor(progress * textSlides.length),
-        textSlides.length - 1
-      );
-      setActiveSlide(newActiveSlide);
+      // const newActiveSlide = Math.min(
+      //   Math.floor(progress * textSlides.length),
+      //   textSlides.length - 1
+      // );
+      // setActiveSlide(newActiveSlide);
 
       // Show/hide tooltip
       setShowTooltip(progress < 0.05);
