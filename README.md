@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # project-for-hafeed
 
 This project is built with React, TypeScript, and Vite.
@@ -73,3 +74,6 @@ export default defineConfig([
   },
 ])
 ```
+=======
+# anmation
+>>>>>>> 5638934c210702b2578ccc5bfcfe892132c790ea
