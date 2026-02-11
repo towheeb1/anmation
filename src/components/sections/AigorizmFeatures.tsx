@@ -19,7 +19,7 @@ const features = [
     tagColor: 'purple',
     title: 'NV-100 Gateway',
     description: 'Install and configure the NV-100 gateway in buildings and villas. Supports connection via relays, Modbus, PacNet, or wireless communication.',
-    image: 'img/screen-00.png',
+    image: 'https://placehold.co/800x600/1a1a2e/ffffff?text=NV-100+Gateway',
     tooltip: 'NV-100',
     align: 'left'
   },
@@ -29,7 +29,7 @@ const features = [
     tagColor: 'purple',
     title: 'AIGORIZM Platform',
     description: 'View all fire alarms and faults in real-time. Advanced dashboard for building owners, maintenance companies, and civil defense.',
-    image: 'img/screen-32.png',
+    image: 'https://placehold.co/800x600/1a1a2e/ffffff?text=AIGORIZM+Platform',
     tooltip: 'Dashboard',
     align: 'right'
   },
@@ -39,7 +39,7 @@ const features = [
     tagColor: 'purple',
     title: 'Civil Defense Integration',
     description: 'Send fire alarms instantly with a reliable and secure system. Provide accurate information to speed up response and save lives.',
-    image: 'img/screen-1.png',
+    image: 'https://placehold.co/800x600/1a1a2e/ffffff?text=Civil+Defense',
     tooltip: 'Civil Defense',
     align: 'left'
   },
@@ -49,7 +49,7 @@ const features = [
     tagColor: 'purple',
     title: 'Smart Detection',
     description: 'Connect fire detectors, gas detectors, sirens, and emergency devices to the platform. Support for various detection devices used in buildings.',
-    image: 'img/screen-11.png',
+    image: 'https://placehold.co/800x600/1a1a2e/ffffff?text=Smart+Detection',
     tooltip: 'Detectors',
     align: 'right'
   }
@@ -73,14 +73,14 @@ const services = [
     category: 'AI Engine',
     description: 'Smart escalation with AI-driven alarm management. Real-time visibility into life-safety systems with automated regulatory compliance.',
     span: 'large',
-    bgImage: 'img/service-bg.png'
+    bgImage: 'https://placehold.co/600x400/2d1b69/ffffff?text=AI+Services'
   },
   {
     title: 'Dashboards & Analytics',
     category: 'Analytics',
     description: 'Comprehensive dashboards for device management, alarm events, and system analytics. User and role management with secure, scalable architecture.',
     span: 'large',
-    bgImage: 'img/analytics-bg.png'
+    bgImage: 'https://placehold.co/600x400/1a1a2e/ffffff?text=Analytics'
   },
   {
     title: 'Security AI',
@@ -103,7 +103,7 @@ const testimonials = [
     name: 'Ahmed Al-Rashid',
     role: 'Civil Defense Director',
     company: 'Government Agency',
-    avatar: 'img/avatar-1.jpg',
+    avatar: 'https://placehold.co/200x200/8b5cf6/ffffff?text=AR',
     // fallbackAvatar: 'https://randomuser.me/api/portraits/men/32.jpg'
   },
   {
@@ -112,7 +112,7 @@ const testimonials = [
     name: 'Sarah Hassan',
     role: 'Operations Director',
     company: 'Commercial Properties Group',
-    avatar: 'img/avatar-2.jpg',
+    avatar: 'https://placehold.co/200x200/0ea5e9/ffffff?text=SH',
     // fallbackAvatar: 'https://randomuser.me/api/portraits/women/44.jpg'
   },
   {
@@ -121,7 +121,7 @@ const testimonials = [
     name: 'Mohammed Al-Farsi',
     role: 'Safety Compliance Officer',
     company: 'Regional Hospital Network',
-    avatar: 'img/avatar-3.jpg',
+    avatar: 'https://placehold.co/200x200/10b981/ffffff?text=MA',
     // fallbackAvatar: 'https://randomuser.me/api/portraits/men/52.jpg'
   },
   {
@@ -130,7 +130,7 @@ const testimonials = [
     name: 'Fatima Al-Mansoori',
     role: 'Facilities Manager',
     company: 'International Airport',
-    avatar: 'img/avatar-4.jpg',
+    avatar: 'https://placehold.co/200x200/f59e0b/ffffff?text=FA',
     // fallbackAvatar: 'https://randomuser.me/api/portraits/women/65.jpg'
   },
   {
@@ -139,7 +139,7 @@ const testimonials = [
     name: 'Khalid Ibrahim',
     role: 'Technical Director',
     company: 'Industrial Complex',
-    avatar: 'img/avatar-5.jpg',
+    avatar: 'https://placehold.co/200x200/ef4444/ffffff?text=KI',
     // fallbackAvatar: 'https://randomuser.me/api/portraits/men/76.jpg'
   }
 ];
@@ -384,7 +384,7 @@ export default function AigorizmFeatures() {
                         }}>
                           <div className="absolute inset-[3%] rounded overflow-hidden bg-black">
                             <img 
-                              src={`/anmation/${feature.image}`}
+                              src={feature.image}
                               alt={feature.title}
                               className="w-full h-full object-contain"
                               onError={(e) => {
@@ -401,7 +401,7 @@ export default function AigorizmFeatures() {
                         </div>
                         <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center" style={{ bottom: '3%', width: '80px', height: '80px' }}>
                           <img 
-                            src="/anmation/img/n-logo.png"
+                            src="https://placehold.co/100x100/8b5cf6/ffffff?text=N"
                             alt="Logo" 
                             className="w-16 h-16 object-contain"
                             onError={(e) => { 
@@ -471,7 +471,7 @@ export default function AigorizmFeatures() {
                 }`}
                 style={{
                   background: service.bgImage 
-                    ? `linear-gradient(rgba(10, 10, 15, 0.3), rgba(10, 10, 15, 0.9)), url('/anmation/${service.bgImage}') center/cover`
+                    ? `linear-gradient(rgba(10, 10, 15, 0.3), rgba(10, 10, 15, 0.9)), url('${service.bgImage}') center/cover`
                     : 'rgba(255, 255, 255, 0.03)',
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.06)'
@@ -588,7 +588,7 @@ export default function AigorizmFeatures() {
                             <img 
                               alt={testimonial.name} 
                               className="w-full h-full object-cover" 
-                              src={`/anmation/${testimonial.avatar}`}
+                              src={testimonial.avatar}
                               onError={(e) => { 
                                 const img = e.target as HTMLImageElement;
                                 img.style.display = 'none';
