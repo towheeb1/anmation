@@ -19,7 +19,7 @@ const features = [
     tagColor: 'purple',
     title: 'NV-100 Gateway',
     description: 'Install and configure the NV-100 gateway in buildings and villas. Supports connection via relays, Modbus, PacNet, or wireless communication.',
-    image: 'imgs/screen-00.png',
+    image: 'img/screen-00.png',
     tooltip: 'NV-100',
     align: 'left'
   },
@@ -29,7 +29,7 @@ const features = [
     tagColor: 'purple',
     title: 'AIGORIZM Platform',
     description: 'View all fire alarms and faults in real-time. Advanced dashboard for building owners, maintenance companies, and civil defense.',
-    image: 'imgs/screen-32.png',
+    image: 'img/screen-32.png',
     tooltip: 'Dashboard',
     align: 'right'
   },
@@ -39,7 +39,7 @@ const features = [
     tagColor: 'purple',
     title: 'Civil Defense Integration',
     description: 'Send fire alarms instantly with a reliable and secure system. Provide accurate information to speed up response and save lives.',
-    image: 'imgs/screen-1.png',
+    image: 'img/screen-1.png',
     tooltip: 'Civil Defense',
     align: 'left'
   },
@@ -49,7 +49,7 @@ const features = [
     tagColor: 'purple',
     title: 'Smart Detection',
     description: 'Connect fire detectors, gas detectors, sirens, and emergency devices to the platform. Support for various detection devices used in buildings.',
-    image: 'imgs/screen-11.png',
+    image: 'img/screen-11.png',
     tooltip: 'Detectors',
     align: 'right'
   }
@@ -73,14 +73,14 @@ const services = [
     category: 'AI Engine',
     description: 'Smart escalation with AI-driven alarm management. Real-time visibility into life-safety systems with automated regulatory compliance.',
     span: 'large',
-    bgImage: 'imgs/service-bg.png'
+    bgImage: 'img/service-bg.png'
   },
   {
     title: 'Dashboards & Analytics',
     category: 'Analytics',
     description: 'Comprehensive dashboards for device management, alarm events, and system analytics. User and role management with secure, scalable architecture.',
     span: 'large',
-    bgImage: 'imgs/analytics-bg.png'
+    bgImage: 'img/analytics-bg.png'
   },
   {
     title: 'Security AI',
@@ -103,7 +103,7 @@ const testimonials = [
     name: 'Ahmed Al-Rashid',
     role: 'Civil Defense Director',
     company: 'Government Agency',
-    avatar: 'imgs/avatar-1.jpg',
+    avatar: 'img/avatar-1.jpg',
     fallbackAvatar: 'https://randomuser.me/api/portraits/men/32.jpg'
   },
   {
@@ -112,7 +112,7 @@ const testimonials = [
     name: 'Sarah Hassan',
     role: 'Operations Director',
     company: 'Commercial Properties Group',
-    avatar: 'imgs/avatar-2.jpg',
+    avatar: 'img/avatar-2.jpg',
     fallbackAvatar: 'https://randomuser.me/api/portraits/women/44.jpg'
   },
   {
@@ -121,7 +121,7 @@ const testimonials = [
     name: 'Mohammed Al-Farsi',
     role: 'Safety Compliance Officer',
     company: 'Regional Hospital Network',
-    avatar: 'imgs/avatar-3.jpg',
+    avatar: 'img/avatar-3.jpg',
     fallbackAvatar: 'https://randomuser.me/api/portraits/men/52.jpg'
   },
   {
@@ -130,7 +130,7 @@ const testimonials = [
     name: 'Fatima Al-Mansoori',
     role: 'Facilities Manager',
     company: 'International Airport',
-    avatar: 'imgs/avatar-4.jpg',
+    avatar: 'img/avatar-4.jpg',
     fallbackAvatar: 'https://randomuser.me/api/portraits/women/65.jpg'
   },
   {
@@ -139,7 +139,7 @@ const testimonials = [
     name: 'Khalid Ibrahim',
     role: 'Technical Director',
     company: 'Industrial Complex',
-    avatar: 'imgs/avatar-5.jpg',
+    avatar: 'img/avatar-5.jpg',
     fallbackAvatar: 'https://randomuser.me/api/portraits/men/76.jpg'
   }
 ];
@@ -384,7 +384,7 @@ export default function AigorizmFeatures() {
                         }}>
                           <div className="absolute inset-[3%] rounded overflow-hidden bg-black">
                             <img 
-                              src={feature.image} 
+                              src={`/anmation/${feature.image}`}
                               alt={feature.title}
                               className="w-full h-full object-contain"
                               onError={(e) => {
@@ -395,7 +395,7 @@ export default function AigorizmFeatures() {
                         </div>
                         <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center" style={{ bottom: '3%', width: '80px', height: '80px' }}>
                           <img 
-                            src="img/n-logo.png" 
+                            src="/anmation/img/n-logo.png"
                             alt="Logo" 
                             className="w-16 h-16 object-contain"
                             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -457,7 +457,7 @@ export default function AigorizmFeatures() {
                 }`}
                 style={{
                   background: service.bgImage 
-                    ? `linear-gradient(rgba(10, 10, 15, 0.3), rgba(10, 10, 15, 0.9)), url('${service.bgImage}') center/cover`
+                    ? `linear-gradient(rgba(10, 10, 15, 0.3), rgba(10, 10, 15, 0.9)), url('/anmation/${service.bgImage}') center/cover`
                     : 'rgba(255, 255, 255, 0.03)',
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.06)'
@@ -574,7 +574,7 @@ export default function AigorizmFeatures() {
                             <img 
                               alt={testimonial.name} 
                               className="w-full h-full object-cover" 
-                              src={testimonial.avatar}
+                              src={`/anmation/${testimonial.avatar}`}
                               onError={(e) => { (e.target as HTMLImageElement).src = testimonial.fallbackAvatar; }}
                             />
                           </div>
