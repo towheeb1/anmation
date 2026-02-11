@@ -104,7 +104,7 @@ const testimonials = [
     role: 'Civil Defense Director',
     company: 'Government Agency',
     avatar: 'img/avatar-1.jpg',
-    fallbackAvatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+    // fallbackAvatar: 'https://randomuser.me/api/portraits/men/32.jpg'
   },
   {
     id: 2,
@@ -113,7 +113,7 @@ const testimonials = [
     role: 'Operations Director',
     company: 'Commercial Properties Group',
     avatar: 'img/avatar-2.jpg',
-    fallbackAvatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+    // fallbackAvatar: 'https://randomuser.me/api/portraits/women/44.jpg'
   },
   {
     id: 3,
@@ -122,7 +122,7 @@ const testimonials = [
     role: 'Safety Compliance Officer',
     company: 'Regional Hospital Network',
     avatar: 'img/avatar-3.jpg',
-    fallbackAvatar: 'https://randomuser.me/api/portraits/men/52.jpg'
+    // fallbackAvatar: 'https://randomuser.me/api/portraits/men/52.jpg'
   },
   {
     id: 4,
@@ -131,7 +131,7 @@ const testimonials = [
     role: 'Facilities Manager',
     company: 'International Airport',
     avatar: 'img/avatar-4.jpg',
-    fallbackAvatar: 'https://randomuser.me/api/portraits/women/65.jpg'
+    // fallbackAvatar: 'https://randomuser.me/api/portraits/women/65.jpg'
   },
   {
     id: 5,
@@ -140,7 +140,7 @@ const testimonials = [
     role: 'Technical Director',
     company: 'Industrial Complex',
     avatar: 'img/avatar-5.jpg',
-    fallbackAvatar: 'https://randomuser.me/api/portraits/men/76.jpg'
+    // fallbackAvatar: 'https://randomuser.me/api/portraits/men/76.jpg'
   }
 ];
 
@@ -388,7 +388,13 @@ export default function AigorizmFeatures() {
                               alt={feature.title}
                               className="w-full h-full object-contain"
                               onError={(e) => {
-                                (e.target as HTMLImageElement).src = `https://via.placeholder.com/800x600/1a1a2e/ffffff?text=${encodeURIComponent(feature.title)}`;
+                                const img = e.target as HTMLImageElement;
+                                img.style.display = 'none';
+                                // Create fallback div with text
+                                const fallbackDiv = document.createElement('div');
+                                fallbackDiv.className = 'w-full h-full flex items-center justify-center bg-gray-800 text-white text-lg font-medium';
+                                fallbackDiv.textContent = feature.title;
+                                img.parentNode?.appendChild(fallbackDiv);
                               }}
                             />
                           </div>
@@ -398,7 +404,15 @@ export default function AigorizmFeatures() {
                             src="/anmation/img/n-logo.png"
                             alt="Logo" 
                             className="w-16 h-16 object-contain"
-                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                            onError={(e) => { 
+                              const img = e.target as HTMLImageElement;
+                              img.style.display = 'none';
+                              // Create text fallback
+                              const fallbackText = document.createElement('div');
+                              fallbackText.className = 'w-full h-full flex items-center justify-center text-white text-xs font-bold';
+                              fallbackText.textContent = 'N';
+                              img.parentNode?.appendChild(fallbackText);
+                            }}
                           />
                         </div>
                       </div>
@@ -575,7 +589,16 @@ export default function AigorizmFeatures() {
                               alt={testimonial.name} 
                               className="w-full h-full object-cover" 
                               src={`/anmation/${testimonial.avatar}`}
-                              onError={(e) => { (e.target as HTMLImageElement).src = testimonial.fallbackAvatar; }}
+                              onError={(e) => { 
+                                const img = e.target as HTMLImageElement;
+                                img.style.display = 'none';
+                                // Show initials as fallback
+                                const initials = testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                                const fallbackDiv = document.createElement('div');
+                                fallbackDiv.className = 'w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white font-bold text-xl';
+                                fallbackDiv.textContent = initials;
+                                img.parentNode?.appendChild(fallbackDiv);
+                              }}
                             />
                           </div>
                           <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-fuchsia-500 rounded-full flex items-center justify-center ring-2 ring-[#0a0a0f]">
