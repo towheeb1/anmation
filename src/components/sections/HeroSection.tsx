@@ -5,8 +5,9 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 // استيراد الفيديوهات
-import backgroundVideo from '../../assets/images/background.mp4';
-import roundVideo from '../../assets/images/round.webm';
+// Videos are now in public folder
+const backgroundVideo = '/background.mp4';
+const roundVideo = '/round.webm';
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);

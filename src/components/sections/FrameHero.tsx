@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 
 const TOTAL_FRAMES = 227;
-const FRAME_PATH = 'src/assets/img/';
+const FRAME_PATH = 'img/';
 const FRAME_EXTENSION = '.webp';
 
 const FrameHero = () => {
