@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/anmation/">
       <App />
     </BrowserRouter>
   </StrictMode>,
